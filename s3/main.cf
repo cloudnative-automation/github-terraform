@@ -1,0 +1,13 @@
+provider "aws" {
+  region = "us-east-1" # 指定AWS区域
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-unique-bucket-name" # 指定一个全局唯一的bucket名称
+  acl    = "private" # 设置bucket的访问控制列表
+
+  tags = {
+    Name        = "My Bucket"
+    Environment = "Production"
+  }
+}
